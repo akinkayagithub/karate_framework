@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[3.1:56]","start":1660411193600,"end":1660411195198,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[3.1:56] 12:19:53.600-12:19:55.198 Validating gender invalid gender","className":"failed"},{"id":2,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[3.2:57]","start":1660411195206,"end":1660411195678,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[3.2:57] 12:19:55.206-12:19:55.678 Validating gender null gender","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[3.3:58]","start":1660411195684,"end":1660411196075,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[3.3:58] 12:19:55.684-12:19:56.075 Validating gender boolean gender","className":"failed"},{"id":4,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[3.4:59]","start":1660411196082,"end":1660411196449,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[3.4:59] 12:19:56.082-12:19:56.449 Validating gender int gender","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

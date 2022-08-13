@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[1:18]","start":1660415044716,"end":1660415046320,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[1:18] 13:24:04.716-13:24:06.320 Create new user"},{"id":2,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[2.1:39]","start":1660415046328,"end":1660415047235,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[2.1:39] 13:24:06.328-13:24:07.235 Validating email with invalid email"},{"id":3,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[2.2:40]","start":1660415047241,"end":1660415048177,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[2.2:40] 13:24:07.241-13:24:08.177 Validating email with null email"},{"id":4,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[2.3:41]","start":1660415048181,"end":1660415049120,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[2.3:41] 13:24:08.181-13:24:09.120 Validating email with existing email"},{"id":5,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[2.4:42]","start":1660415049125,"end":1660415050101,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[2.4:42] 13:24:09.125-13:24:10.101 Validating email with empty email"},{"id":6,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[3.1:57]","start":1660415050106,"end":1660415051032,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[3.1:57] 13:24:10.106-13:24:11.032 Validating gender with invalid gender"},{"id":7,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[3.2:58]","start":1660415051035,"end":1660415051930,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[3.2:58] 13:24:11.035-13:24:11.930 Validating gender with null gender"},{"id":8,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[3.3:59]","start":1660415051935,"end":1660415052294,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[3.3:59] 13:24:11.935-13:24:12.294 Validating gender with empty gender"},{"id":9,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[3.4:60]","start":1660415052297,"end":1660415053228,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[3.4:60] 13:24:12.297-13:24:13.228 Validating gender with int gender"},{"id":10,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[3.5:61]","start":1660415053231,"end":1660415054125,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[3.5:61] 13:24:13.231-13:24:14.125 Validating gender with boolean gender"},{"id":11,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[4.1:74]","start":1660415054128,"end":1660415054951,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[4.1:74] 13:24:14.128-13:24:14.951 Validating missing field name"},{"id":12,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[4.2:75]","start":1660415054954,"end":1660415055355,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[4.2:75] 13:24:14.954-13:24:15.355 Validating missing field gender"},{"id":13,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[4.3:76]","start":1660415055358,"end":1660415056274,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[4.3:76] 13:24:15.358-13:24:16.274 Validating missing field email"},{"id":14,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[4.4:77]","start":1660415056277,"end":1660415056640,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[4.4:77] 13:24:16.277-13:24:16.640 Validating missing field status"},{"id":15,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[4.5:78]","start":1660415056643,"end":1660415057050,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[4.5:78] 13:24:16.643-13:24:17.050 Validating missing field status"},{"id":16,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[4.6:79]","start":1660415057052,"end":1660415057461,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[4.6:79] 13:24:17.052-13:24:17.461 Validating missing field status"},{"id":17,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[4.7:80]","start":1660415057464,"end":1660415058277,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[4.7:80] 13:24:17.464-13:24:18.277 Validating missing field status"},{"id":18,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[4.8:81]","start":1660415058280,"end":1660415058689,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[4.8:81] 13:24:18.280-13:24:18.689 Validating missing field status"},{"id":19,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[4.9:82]","start":1660415058692,"end":1660415059083,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[4.9:82] 13:24:18.692-13:24:19.083 Validating missing field status"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

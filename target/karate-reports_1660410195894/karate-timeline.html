@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[2.1:37]","start":1660409798164,"end":1660409799745,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[2.1:37] 11:56:38.164-11:56:39.745 Validating invalid email"},{"id":2,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[2.2:38]","start":1660409799752,"end":1660409800742,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[2.2:38] 11:56:39.752-11:56:40.742 Validating existing email"},{"id":3,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[2.3:39]","start":1660409800748,"end":1660409801646,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[2.3:39] 11:56:40.748-11:56:41.646 Validating null email"},{"id":4,"group":1,"content":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[2.4:40]","start":1660409801652,"end":1660409802581,"title":"src\/test\/java\/examples\/go_rest\/create_user\/create_user[2.4:40] 11:56:41.652-11:56:42.581 Validating empty email"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
