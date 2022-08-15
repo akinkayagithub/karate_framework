@@ -5,14 +5,16 @@ Feature: Create a user
     * url base_url
     * path create_user_uri
 
-    * def default_request = {name: "Amanda", gender: female, email: amand30@gmail.com, status: active}
+    #TO DO - find function to randomly get emails
+    * def randomEmail = 'johndoe32@gmail.com'
+    * def randomName = 'John'
+
+    * def default_request = {gender: male, status: active}
+    * default_request.email = randomEmail
+    * default_request.name = randomName
     * def schema = {id: #number,name: #string,email: #string,gender: #string,status: #string}
 
-    * def invalid_email_response = {field: email, message: is invalid}
-    * def null_email_response = {field: email, message: can't be blank}
-    * def existing_email_response = {field: email, message: has already been taken}
-
-    * def invalid_gender_response = {"field": "gender", "message": "can't be blank, can be male or female"}
+    * print default_request
 
   @Smoke
   Scenario: Create new user
@@ -20,13 +22,25 @@ Feature: Create a user
     And header Authorization = 'Bearer ' + tokenID
     When method post
     Then status 201
+
     * match response == "#object"
     * match response == schema
+
+    Then def createdUserId = response.id
+    Then def createdName = default_request.name
+    Then def createdGender = default_request.gender
+    Then def createdEmail = default_request.email
+    Then def createdStatus = default_request.status
 
 
   @Regression
   Scenario Outline: Validating email with <attribute>
+    * def invalid_email_response = {field: email, message: is invalid}
+    * def null_email_response = {field: email, message: can't be blank}
+    * def existing_email_response = {field: email, message: has already been taken}
+
     * default_request.email = <email>
+
     And request default_request
     And header Authorization = 'Bearer ' + tokenID
     When method post
@@ -44,7 +58,10 @@ Feature: Create a user
 
   @Regression
   Scenario Outline: Validating gender with <attribute>
+    * def invalid_gender_response = {"field": "gender", "message": "can't be blank, can be male or female"}
+
     * default_request.gender = <gender>
+
     And request default_request
     And header Authorization = 'Bearer ' + tokenID
     When method post

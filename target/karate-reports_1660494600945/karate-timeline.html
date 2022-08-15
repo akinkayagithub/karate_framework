@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/examples\/go_rest\/get_user\/get_user[2.1:45]","start":1660494569237,"end":1660494570949,"title":"src\/test\/java\/examples\/go_rest\/get_user\/get_user[2.1:45] 11:29:29.237-11:29:30.949 Get newly created user negative scenarios","className":"failed"},{"id":2,"group":1,"content":"src\/test\/java\/examples\/go_rest\/get_user\/get_user[2.2:46]","start":1660494570954,"end":1660494570957,"title":"src\/test\/java\/examples\/go_rest\/get_user\/get_user[2.2:46] 11:29:30.954-11:29:30.957 Get newly created user negative scenarios","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/examples\/go_rest\/get_user\/get_user[2.3:47]","start":1660494570962,"end":1660494570963,"title":"src\/test\/java\/examples\/go_rest\/get_user\/get_user[2.3:47] 11:29:30.962-11:29:30.963 Get newly created user negative scenarios","className":"failed"},{"id":4,"group":1,"content":"src\/test\/java\/examples\/go_rest\/get_user\/get_user[2.4:48]","start":1660494570968,"end":1660494570970,"title":"src\/test\/java\/examples\/go_rest\/get_user\/get_user[2.4:48] 11:29:30.968-11:29:30.970 Get newly created user negative scenarios","className":"failed"},{"id":5,"group":1,"content":"src\/test\/java\/examples\/go_rest\/get_user\/get_user[2.5:49]","start":1660494570975,"end":1660494570977,"title":"src\/test\/java\/examples\/go_rest\/get_user\/get_user[2.5:49] 11:29:30.975-11:29:30.977 Get newly created user negative scenarios","className":"failed"},{"id":6,"group":1,"content":"src\/test\/java\/examples\/go_rest\/get_user\/get_user[2.6:50]","start":1660494570981,"end":1660494570983,"title":"src\/test\/java\/examples\/go_rest\/get_user\/get_user[2.6:50] 11:29:30.981-11:29:30.983 Get newly created user negative scenarios","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
